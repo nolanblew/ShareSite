@@ -1,4 +1,10 @@
 ShareSite::Application.routes.draw do
+  get "requests/new"
+
+  get "requests/edit"
+
+  get "requests/delete"
+
   get "users/new"
 
   get "users/login"

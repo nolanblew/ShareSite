@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  requestor_id: 
+  requestee_id: 
+  requestor_rating: 
+  requestee_rating: 
+
+two:
+  requestor_id: 
+  requestee_id: 
+  requestor_rating: 
+  requestee_rating: 
