@@ -1,4 +1,10 @@
 ShareSite::Application.routes.draw do
+  get "users/new"
+
+  get "users/login"
+
+  get "users/edit"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
