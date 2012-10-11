@@ -1,4 +1,14 @@
 ShareSite::Application.routes.draw do
+  get "item/create"
+
+  get "item/delete"
+
+  get "item/details"
+
+  get "item/edit"
+
+  get "item/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
