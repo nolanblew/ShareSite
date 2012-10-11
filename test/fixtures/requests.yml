@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 
+  item_id: 
+  item_description: MyString
+  is_accepted: false
+  is_lended: false
+  date_requested: 2012-10-04 11:12:10
+  date_wanted_back: 2012-10-04 11:12:10
+
+two:
+  user_id: 
+  item_id: 
+  item_description: MyString
+  is_accepted: false
+  is_lended: false
+  date_requested: 2012-10-04 11:12:10
+  date_wanted_back: 2012-10-04 11:12:10
