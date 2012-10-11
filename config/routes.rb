@@ -15,11 +15,15 @@ ShareSite::Application.routes.draw do
 
   get "requests/delete"
 
-  get "users/new"
+  resources :users
 
-  get "users/login"
+#  get "users/new"
+#
+#  get "users/login"
+#
+#  get "users/edit"
 
-  get "users/edit"
+  root :to => 'users#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
