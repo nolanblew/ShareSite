@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ShareSite</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Share Things - @ViewBag.Title</title>
+	<%= stylesheet_link_tag    "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
+    <div class="allContent">
+        <div class="head">
+            <img width="38" height="42" src="assets/LogoSmall.png" />
+            Share Things
+        </div>
+        @RenderPage("_HeadMenu.cshtml")
 
-<%= yield %>
+        <div class="content">
+			<%= yield %>
+        </div>
 
+        <div class="footer"></div>
+    </div>
 </body>
 </html>
