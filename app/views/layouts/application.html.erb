@@ -13,16 +13,21 @@
 <body>
     <div class="allContent">
         <div class="head">
-            <img width="38" height="42" src="assets/LogoSmall.png" />
+            <img width="38" height="42" src="../assets/LogoSmall.png" />
             Share Things
         </div>
-        @RenderPage("_HeadMenu.cshtml")
+		<div class="headMenu">
+			<span class="headMenuItem"><a href=''>Make Request</a></span>
+			<span class="headMenuItem"><a href=''>My Items</a></span>
+			<span class="headMenuItem"><a href=''>Logout</a></span>
+		</div>
 
+		
         <div class="content">
 			<%= yield %>
         </div>
 
-        <div class="footer"></div>
+        <div class="footer">&copy; 2012 Westmont CS Department</div>
     </div>
 </body>
 </html>
