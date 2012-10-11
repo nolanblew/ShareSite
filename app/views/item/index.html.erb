@@ -24,29 +24,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+<!-- iterator -->
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.name)
+            Title
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.description)
+            Description
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.condition)
+            Condition
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Category.name)
+            Category
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.isPublic)
+            Visible?
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            <a href="">Edit</a>/<a href="">Details</a>/<a href="">Delete</a>
         </td>
     </tr>
-}
+<!-- iterator end -->
 
 </table>
