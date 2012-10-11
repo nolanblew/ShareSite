@@ -8,6 +8,18 @@ ShareSite::Application.routes.draw do
   get "item/edit"
 
   get "item/index"
+  
+  get "requests/new"
+
+  get "requests/edit"
+
+  get "requests/delete"
+
+  get "users/new"
+
+  get "users/login"
+
+  get "users/edit"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
