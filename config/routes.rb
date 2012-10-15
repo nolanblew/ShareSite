@@ -28,7 +28,7 @@ ShareSite::Application.routes.draw do
 #
 #  get "users/edit"
 
-  root :to => 'users#new'
+  root :to => 'sessions#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
