@@ -5,7 +5,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    unless @user.save
+    if @user.save
+      flash[:success] = "Welcome to Share Things"
+    else
       render 'new'
     end
   end

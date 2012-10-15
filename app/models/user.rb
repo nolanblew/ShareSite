@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-<<<<<<< HEAD
   attr_accessible :email, :is_admin, :name, :password, :password_confirmation, :specific_location
   has_secure_password
 
