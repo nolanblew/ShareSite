@@ -1,6 +1,11 @@
 class ItemController < ApplicationController
-  def create
-    @item = Item.new
+def create
+	@item = Item.new(params[:item])
+	if @item.save
+      redirect_to '/item/index'
+    else
+      render 'new'
+    end
   end
 
   def delete
