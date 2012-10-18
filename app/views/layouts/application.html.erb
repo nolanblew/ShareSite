@@ -19,7 +19,9 @@
 		<div class="headMenu">
 			<span class="headMenuItem"><a href=''>Make Request</a></span>
 			<span class="headMenuItem"><a href=''>My Items</a></span>
-			<span class="headMenuItem"><a href=''>Logout</a></span>
+			<% if signed_in? %>
+                          <span class="headMenuItem"><%= link_to "Logout", signout_path, method: "delete" %></a></span>
+                        <% end %>
 		</div>
 
 		
