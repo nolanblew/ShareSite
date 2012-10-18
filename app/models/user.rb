@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   before_save { |user| user.email = email.downcase }
 
   has_many :item
-  has_many :requests
+  has_many :request
   has_many :rating
 
   validates :name, presence: true, length: {maximum: 30}

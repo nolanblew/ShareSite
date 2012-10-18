@@ -1,5 +1,5 @@
 ShareSite::Application.routes.draw do
-  get "item/create"
+  get "item/new"
 
   get "item/delete"
 

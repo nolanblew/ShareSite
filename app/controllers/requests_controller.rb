@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
   def new
-  	@item = Item.new
+  	@request = Request.new
   end
 
   def edit
