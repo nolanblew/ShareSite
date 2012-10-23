@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to Share Things"
-      redirect_to '/item/index'
+      redirect_to '/items/index'
     else
       render 'new'
     end
@@ -19,4 +19,5 @@ class UsersController < ApplicationController
 
   def edit
   end
+
 end

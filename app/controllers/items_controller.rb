@@ -5,8 +5,9 @@ class ItemsController < ApplicationController
 
   def create
 	@item = Item.new(params[:item])
+	@item.user_id = current_user.id
 	if @item.save
-      redirect_to '/item/index'
+      redirect_to '/items/index'
     else
       render 'new'
     end

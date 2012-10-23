@@ -1,13 +1,13 @@
 ShareSite::Application.routes.draw do
-  get "item/new"
+  get "items/new"
 
-  get "item/delete"
+  get "items/delete"
 
-  get "item/details"
+  get "items/details"
 
-  get "item/edit"
+  get "items/edit"
 
-  get "item/index"
+  get "items/index"
   
   get "requests/new"
 
