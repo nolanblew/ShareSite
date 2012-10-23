@@ -20,14 +20,16 @@
 			<span class="headMenuItem"><a href='/requests/new'>Make Request</a></span>
 			<span class="headMenuItem"><a href='/items/index'>My Items</a></span>
 			<% if signed_in? %>
-                          <span class="headMenuItem"><%= link_to "Logout", signout_path, method: "delete" %></a></span>
-                        <% end %>
+              <span class="headMenuItem"><%= link_to "Logout", signout_path, method: "delete" %></a></span>
+            <% end %>
 		</div>
 
-		
         <div class="content">
-			<%= yield %>
-			<br/><br/>
+          <% flash.each do |key, value| %>
+            <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+          <% end %>
+	      <%= yield %>
+          <br/><br/>
         </div>
 
         <div class="footer">&copy; 2012 Westmont CS Department</div>
