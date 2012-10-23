@@ -4,6 +4,7 @@
 <div>
   <div>
     <%= form_for(@item) do |f| %>
+	  <%= render 'error_messages', object: f.object %>
 
       <div class="editor-label">
 	  <%=f.label :name, "Item name" %>

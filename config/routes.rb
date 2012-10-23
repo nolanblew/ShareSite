@@ -8,12 +8,16 @@ ShareSite::Application.routes.draw do
   get "items/edit"
 
   get "items/index"
+
+  get "items/list"
   
   get "requests/new"
 
   get "requests/edit"
 
   get "requests/delete"
+
+  post "requests/new"
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
