@@ -1,0 +1,10 @@
+<h2>Searching Items</h2>
+<hr>
+<% for i in Item.order(:category_id).select{|item|item.user != current_user.id} -%>
+<div class='item'>
+    <div class='item_name'> <p>Name: <%= i.name %></p> </div>
+    <div class='item_user'> <p>User: <%= i.user %></p> </div>
+    <div class='item_condition'> <p>Condition: <%= i.condition %></p> </div>
+</div>
+<hr>
+<% end %>

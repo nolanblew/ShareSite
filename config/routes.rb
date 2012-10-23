@@ -8,6 +8,8 @@ ShareSite::Application.routes.draw do
   get "items/edit"
 
   get "items/index"
+
+  get "items/list"
   
   get "requests/new"
 
