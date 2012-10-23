@@ -23,6 +23,9 @@ end
 
 gem 'jquery-rails'
 
+# For email
+gem 'mail'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
