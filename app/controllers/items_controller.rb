@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_filter :signed_in_user
+
   def new
     @item = Item.new
   end
