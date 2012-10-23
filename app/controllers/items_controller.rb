@@ -2,13 +2,13 @@ class ItemsController < ApplicationController
   before_filter :signed_in_user
 
   def new
-	@item = Item.new
+    @item = Item.new
   end
 
   def create
-	@item = Item.new(params[:item])
-	@item.user_id = current_user.id
-	if @item.save
+    @item = Item.new(params[:item])
+    @item.user_id = current_user.id
+    if @item.save
       redirect_to '/items/index'
     else
       render 'new'
@@ -23,9 +23,10 @@ class ItemsController < ApplicationController
   def details
   end
 
-#lists of all the items
+  #lists of all the items
   def list
     @item = Item.find(:all)
+    @search_query = params['q']
   end
 
   def edit

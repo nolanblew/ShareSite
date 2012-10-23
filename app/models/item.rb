@@ -7,6 +7,5 @@ class Item < ActiveRecord::Base
   validates :user_id, presence: true
   validates :category_id, presence: true
   validates :description, presence: true
-  validates :condition, presence: true
   validates :name, presence: true
 end

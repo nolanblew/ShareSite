@@ -17,6 +17,8 @@ ShareSite::Application.routes.draw do
 
   get "requests/delete"
 
+  post "requests/new"
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :items
