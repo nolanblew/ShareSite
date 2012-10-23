@@ -24,10 +24,10 @@
 	  </div>
 	  <div class="editor-field">
 	  <%=f.select(:condition, [["New", 0],
-								["Great Condition", 1],
-								["Good Condition", 2],
-								["Fair Condition", 3],
-								["Poor Condition", 4],
+								["Great", 1],
+								["Good", 2],
+								["Fair", 3],
+								["Poor", 4],
 								["Completely Destroyed", 5]]) %>
 	  </div>
 
@@ -35,14 +35,7 @@
 	  <%=f.label :category_id, "Category" %>
 	  </div>
 	  <div class="editor-field">
-	  <%=f.select(:category_id, [["Books", 0],
-								["Exercise Equipment", 1],
-								["Games", 2],
-								["Hobby", 3],
-								["Livestock", 4], 
-								["Movies", 5],
-								["Practical Items", 6], 
-								["Other", 7]]) %>
+	  <%=f.text_field :category_id %>
 	  </div>
 	  
 	  <%= @user %>
