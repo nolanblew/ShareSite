@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
   def new
-  	@request = Request.new
+  	@request = Request.create(:item_id =>  params["item_id"])
   end
 
   def edit
