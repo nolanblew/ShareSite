@@ -14,10 +14,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def login
-  end
-
   def edit
   end
-
 end
