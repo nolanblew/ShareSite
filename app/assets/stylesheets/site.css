@@ -146,12 +146,8 @@ textarea {
 
 .footer {
     background-color: #1076bc;
-    height: 25px;
+    height: 35px;
     font-size: 18px;
-	text-align: center;
-	color: white;
-	font-size: 9px;
-	padding-top: 10px;
 }
 
 a:link {
