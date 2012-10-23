@@ -1,0 +1,52 @@
+<% provide(:title, "Create") %>
+<h1>Create</h1>
+
+<div>
+  <div>
+    <%= form_for(@item) do |f| %>
+
+      <div class="editor-label">
+	  <%=f.label :name, "Item name" %>
+	  </div>
+	  <div class="editor-field">
+      <%=f.text_field :name %>
+	  </div>
+
+      <div class="editor-label">
+	  <%=f.label :description, "Description of the item" %>
+	  </div>
+	  <div class="editor-field">
+      <%=f.text_field :description %>
+	  </div>
+      
+	  <div class="editor-label">
+	  <%=f.label :condition, "Condition of the item" %>
+	  </div>
+	  <div class="editor-field">
+	  <%=f.select(:condition, [["New", 0],
+								["Great Condition", 1],
+								["Good Condition", 2],
+								["Fair Condition", 3],
+								["Poor Condition", 4],
+								["Completely Destroyed", 5]]) %>
+	  </div>
+
+      <div class="editor-label">
+	  <%=f.label :category_id, "Category" %>
+	  </div>
+	  <div class="editor-field">
+	  <%=f.select(:category_id, [["Books", 0],
+								["Exercise Equipment", 1],
+								["Games", 2],
+								["Hobby", 3],
+								["Livestock", 4], 
+								["Movies", 5],
+								["Practical Items", 6], 
+								["Other", 7]]) %>
+	  </div>
+	  
+	  <%= @user %>
+      <%= f.submit "Create" %>
+    <% end %>
+  </div>
+</div>
