@@ -4,19 +4,20 @@
 <div>
   <div>
     <%= form_for(@item) do |f| %>
+	  <%= render 'error_messages', object: f.object %>
 
       <div class="editor-label">
 	  <%=f.label :name, "Item name" %>
 	  </div>
 	  <div class="editor-field">
-      <%=f.text_field :name %>
+      <%=f.text_field :name, :class => "txtInput" %>
 	  </div>
 
       <div class="editor-label">
 	  <%=f.label :description, "Description of the item" %>
 	  </div>
 	  <div class="editor-field">
-      <%=f.text_field :description %>
+      <%=f.text_field :description, :class => "txtInput" %>
 	  </div>
       
 	  <div class="editor-label">
@@ -35,7 +36,7 @@
 	  <%=f.label :category_id, "Category" %>
 	  </div>
 	  <div class="editor-field">
-	  <%=f.text_field :category_id %>
+	  <%=f.text_field :category_id, :class => "txtInput" %>
 	  </div>
 	  
 	  <%= @user %>
