@@ -4,7 +4,7 @@
 </form>
 <hr>
 <% if @search_query %>
-<% for i in Item.order(:category).select{|item| (item.description && item.description.include?(@search_query)) || (item.name && item.name.include?(@search_query))}-%>
+<% for i in Item.order(:category).select{|item| (item.description.downcase && item.description.downcase.include?(@search_query.downcase)) || (item.name.downcase && item.name.downcase.include?(@search_query.downcase))}-%>
 <div class='item'>
     <div class='item_name'> <p>Name: <%= i.name %></p> </div>
     <div class='item_description'> <p>Description: <%= i.description %></p>
