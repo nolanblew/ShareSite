@@ -1,6 +1,4 @@
 class ItemsController < ApplicationController
-  before_filter :signed_in_user
-
   def new
     @item = Item.new
   end
@@ -47,20 +45,14 @@ class ItemsController < ApplicationController
   end
 
   def update
-  @item = Item.find(params[:id])
- 
-  respond_to do |format|
+    @item = Item.find(params[:id])
+  
     if @item.update_attributes(params[:item])
-      format.html  { redirect_to(@item,
-                    :notice => 'Item was successfully updated.') }
-      format.json  { head :no_content }
-    else
-      format.html  { render :action => "edit" }
-      format.json  { render :json => @item.errors,
-                    :status => :unprocessable_entity }
+        redirect_to '/items/index'
+      else
+        render 'new'
     end
   end
-end
 
 
   def index

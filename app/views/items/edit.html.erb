@@ -1,66 +1,42 @@
-
-<h2>Edit</h2>
-
-
-
-
-    <div class="editor-label">
-        <label>Item Name</label>
-    </div>
-    <div class="editor-field">
-        <input type="text" class="txtInput" name="itemname" value="Current Item Name">
-    </div>
-
-    <div class="editor-label">
-        <label>Description of the Item*</label>
-    </div>
-    <div class="editor-field">
-        <input type="text" class="txtInput" name="itemdescription" value="Current Item Description">
-    </div>
-
-    <div class="editor-label">
-        <label>Condition of the Item*</label>
-    </div>
-    <div class="editor-field">
-        <select name="condition" class="ddlInput">
-            <option value="new">New</option>
-            <option value="likenew">Like New</option>
-            <option value="used">Used</option>
-            <option value="heavilyused">Heavily Used</option>
-            <option value="utterlydestroyed">Utterly Destroyed</option>
-        </select>
-    </div>
-
-    <div class="editor-field">
-        <input checked="checked" type="checkbox" /> 
-        <label>Visible to the Public</label>
-    </div>
-
-    
-    <div class="editor-label">
-        <label>Category</label>
-    </div>
-    <div class="editor-field">
-        <select name="category" class="ddlInput">
-            <option value="1">School Supplies</option>
-            <option value="2">Tools</option>
-            <option value="3">Media</option>
-        </select>
-       
-    </div>
-
-
-
-
-
-    <p>
-        <input type="submit" value="Create" />
-    </p>
+<% provide(:title, "Edit") %>
+<h1>Edit</h1>
 
 <div>
-   
-    <a> <%= link_to 'Back to List (Cancel)', items_path %> </a>
-    <!--<a href="">Back to List (Cancel)</a> -->
-</div>
+  <div>
+    <%= form_for(@item) do |f| %>
+	  <%= render 'error_messages', object: f.object %>
 
- 
+      <div class="editor-label">
+	  <%=f.label :name, "Item name" %>
+	  </div>
+	  <div class="editor-field">
+      <%=f.text_field :name, :class => "txtInput" %>
+	  </div>
+
+      <div class="editor-label">
+	  <%=f.label :description, "Description of the item" %>
+	  </div>
+	  <div class="editor-field">
+      <%=f.text_field :description, :class => "txtInput" %>
+	  </div>
+      
+	  <div class="editor-label">
+	  <%=f.label :condition, "Condition of the item" %>
+	  </div>
+	  <div class="editor-field">
+	  <%=f.select :condition, ["New", "Great", "Good", "Fair", "Poor", "Unusable"], {}, {:class => "ddlInput"} %>
+	  </div>
+
+      <div class="editor-label">
+	  <%=f.label :category_id, "Category" %>
+	  </div>
+	  <div class="editor-field">
+	  <%=f.text_field :category_id, :class => "txtInput" %>
+	  </div>
+	  <br/>
+	  <%= @user %>
+	  <% @item.user_id = current_user.id %>
+      <%= f.submit "Update" %>
+    <% end %>
+  </div>
+</div>
