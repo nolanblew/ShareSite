@@ -1,0 +1,30 @@
+<form action="list" method="get">
+<input type="text" name="q" alt="Search" value="" maxlength="256" size="32" />
+<input type="submit" name="btnG" value="Search" />
+</form>
+<hr>
+<% if @search_query %>
+<% for i in Item.order(:category).select{|item| (item.description && item.description.include?(@search_query)) || (item.name && item.name.include?(@search_query))}-%>
+<div class='item'>
+    <div class='item_name'> <p>Name: <%= i.name %></p> </div>
+    <div class='item_description'> <p>Description: <%= i.description %></p>
+    <div class='item_condition'> <p>Condition: <%= i.condition %></p>
+    <div class='item_request'>
+    <form action="/requests/new" method="post">
+    <input type="hidden" name="item_id" value="<%= i.id %>">
+    <button type="submit">Request this item</button></form></div>
+</div>
+</div>
+<hr>
+<% end %>
+<% else %>
+<% for i in Item.order(:category).select{|item| item.user_id != current_user.id}%>
+  <div class='item'>
+    <div class='item_name'> <p>Name: <%= i.name %></p> </div>
+    <div class='item_description'> <p>Description: <%= i.description %></p>
+    <div class='item_condition'> <p>Condition: <%= i.condition %></p> </div>
+  </div>
+<hr>
+<% end %>
+<% end %>
+
