@@ -1,4 +1,7 @@
+
 <h2>Edit</h2>
+
+
 
 
     <div class="editor-label">
@@ -20,12 +23,12 @@
     </div>
     <div class="editor-field">
         <select name="condition" class="ddlInput">
-  			<option value="new">New</option>
-  			<option value="likenew">Like New</option>
-  			<option value="used">Used</option>
-  			<option value="heavilyused">Heavily Used</option>
-  			<option value="utterlydestroyed">Utterly Destroyed</option>
-		</select>
+            <option value="new">New</option>
+            <option value="likenew">Like New</option>
+            <option value="used">Used</option>
+            <option value="heavilyused">Heavily Used</option>
+            <option value="utterlydestroyed">Utterly Destroyed</option>
+        </select>
     </div>
 
     <div class="editor-field">
@@ -38,19 +41,26 @@
         <label>Category</label>
     </div>
     <div class="editor-field">
-    	<select name="category" class="ddlInput">
-    		<option value="1">School Supplies</option>
-    		<option value="2">Tools</option>
-    		<option value="3">Media</option>
-		</select>
-
+        <select name="category" class="ddlInput">
+            <option value="1">School Supplies</option>
+            <option value="2">Tools</option>
+            <option value="3">Media</option>
+        </select>
        
     </div>
+
+
+
+
 
     <p>
         <input type="submit" value="Create" />
     </p>
 
 <div>
-    <a href="">Back to List (Cancel)</a>
+   
+    <a> <%= link_to 'Back to List (Cancel)', items_path %> </a>
+    <!--<a href="">Back to List (Cancel)</a> -->
 </div>
+
+ 
