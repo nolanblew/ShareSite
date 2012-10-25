@@ -28,6 +28,7 @@
 2. why doesnt category/condition show up?-->
 
 <% @items.each do |item| %>
+  <% if item.user_id == current_user.id %>
     <tr>
         <td><%= item.name %></td>
         <td><%= item.description %></td>
@@ -43,6 +44,7 @@
         </td>
     -->
     </tr>
+	<% end %>
     <% end %>
 <!-- iterator end -->
 
