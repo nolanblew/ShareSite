@@ -24,27 +24,29 @@
         <th></th>
     </tr>
 
-<!-- iterator -->
+<% Item.all.each do |item| %>
+	<% if(item.user.id == current_user.id) %>
     <tr>
         <td>
-            Title
+            <%= item.name %>
         </td>
         <td>
-            Description
+            <%= item.description %>
         </td>
         <td>
-            Condition
+            <%= item.condition %>
         </td>
         <td>
-            Category
+            <%= item.category_id %>
         </td>
         <td>
-            Visible?
+            True
         </td>
         <td>
-            <a href="">Edit</a>/<a href="">Details</a>/<a href="">Delete</a>
+            <a href="/items/edit?id=<%= item.id %>">Edit</a>/<a href="">Details</a>/<a href="">Delete</a>
         </td>
     </tr>
-<!-- iterator end -->
+	<% end %>
+<% end  %>
 
 </table>

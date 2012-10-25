@@ -30,6 +30,10 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
   end
+  
+  def update
+    @item = Item.find(params[:id])
+  end
 
   def index
     @title = "Index"
