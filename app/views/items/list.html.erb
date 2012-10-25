@@ -4,7 +4,7 @@
 </form>
 <hr>
 <% if @search_query %>
-<% for i in Item.order(:category_id).select{|item| (item.description && item.description.include?(@search_query)) || (item.name && item.name.include?(@search_query))}-%>
+<% for i in Item.order(:category).select{|item| (item.description && item.description.include?(@search_query)) || (item.name && item.name.include?(@search_query))}-%>
 <div class='item'>
     <div class='item_name'> <p>Name: <%= i.name %></p> </div>
     <div class='item_user'> <p>User: <%= i.user %></p> </div>
@@ -21,7 +21,7 @@
 <% for i in Item.order(:category_id).select{|item| item.user_id != current_user.id}%>
   <div class='item'>
     <div class='item_name'> <p>Name: <%= i.name %></p> </div>
-    <div class='item_user'> <p>User: <%= i.user %></p> </div>
+    <div class='item_user'> <p>User: <%= i.user.name %></p> </div>
     <div class='item_condition'> <p>Condition: <%= i.condition %></p> </div
   </div>
 <hr>

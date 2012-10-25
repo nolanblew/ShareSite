@@ -1,5 +1,5 @@
-<% provide(:title, "Create") %>
-<h1>Create</h1>
+<% provide(:title, "Edit") %>
+<h1>Edit</h1>
 
 <div>
   <div>
@@ -35,7 +35,8 @@
 	  </div>
 	  <br/>
 	  <%= @user %>
-      <%= f.submit "Create" %>
+	  <% @item.user_id = current_user.id %>
+      <%= f.submit "Update" %>
     <% end %>
   </div>
 </div>
