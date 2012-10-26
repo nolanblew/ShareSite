@@ -3,6 +3,7 @@ class RequestsController < ApplicationController
 
   def new
   	@request = Request.create(:item_id =>  params["item_id"])
+    TheMail.request_notification("somebody", "something")
   end
 
   def edit

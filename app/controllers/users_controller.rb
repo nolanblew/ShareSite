@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
+      TheMail.welcome(@user).deliver
       flash[:success] = "Welcome to Share Things"
       redirect_to '/items/index'
     else

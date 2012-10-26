@@ -6,4 +6,12 @@ class TheMail < ActionMailer::Base
       subject: "Someone requested your item.",
     )
   end
+  def welcome (user)
+    mail(
+      from: "sharesite.do.not.reply@gmail.com",
+      to: user.email,
+      subject: "Welcome to ShareSite!"
+    )
+  end
+
 end
