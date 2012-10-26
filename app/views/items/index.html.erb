@@ -17,10 +17,7 @@
         <th>
             Category
         </th>
-        <th>
-            Visible to the Public
-        </th>
-        <th></th>
+        <th>Actions</th>
     </tr>
 
 <!-- iterator -->
@@ -36,11 +33,6 @@
         <a> <%= link_to 'Edit', edit_item_path(item) %></a>/
         <a> <%= link_to 'Destroy', item, :confirm => 'Are you sure?',
                                      :method => :delete %> </a></td>
-        <!--
-        <td>
-            <a href="">Edit</a>/<a href="">Details</a>/<a href="">Delete</a>
-        </td>
-    -->
     </tr>
 	<% end %>
     <% end %>
