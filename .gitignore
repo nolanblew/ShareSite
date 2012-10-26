@@ -14,3 +14,9 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+
+ # Mail tester
+mail_test
+
+ # Local configuration
+config/local.rb
