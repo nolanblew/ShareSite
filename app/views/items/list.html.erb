@@ -18,7 +18,7 @@
 		<td><%= i.description %></td>
 		<td><%= i.condition %></td>
 		<td>
-		<form action="/requests/new" method="post">
+		<form action="/requests/new?item_id=<%= i.id %>" method="post">
 		<input type="hidden" name="item_id" value="<%= i.id %>">
 		<button type="submit">Request this item</button></form></td>
 	</tr>
