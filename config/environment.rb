@@ -15,5 +15,5 @@ ActionMailer::Base.raise_delivery_errors = true
 if FileTest.exists? "#{::Rails.root.to_s}/config/local.rb"
   require "#{::Rails.root.to_s}/config/local.rb"
 else
-  RAILS_DEFAULT_LOGGER.warn 'Please set up config/local.rb'
+  Rails.logger.warn 'Please set up config/local.rb'
 end

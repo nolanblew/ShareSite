@@ -7,6 +7,7 @@ class RequestsController < ApplicationController
   
   def create
   	@request = Request.create(:item_id =>  params["item_id"])
+    TheMail.request_notification("somebody", "something")
     if @request.save
       redirect_to '/items/index'
     else
