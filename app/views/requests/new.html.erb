@@ -1,2 +1,28 @@
-<h1>Requests#new</h1>
-<p>Find me in app/views/requests/new.html.erb</p>
+<% provide(:title, "Request") %>
+<h2>Request an item</h2>
+
+<div>
+  <div>
+    <%= form_for(@request) do |f| %>
+      <%= render 'error_messages', object: f.object %>
+		<% item = Item.find(params[:item_id]) %>
+			<table class="displayThings">
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Condition</th>
+				</tr>
+				<tr>
+					<td><%= item.name %></td>
+					<td><%= item.description %></td>
+					<td><%= item.condition %></td>
+				</tr>
+			</table>
+			<% @request.date_requested = Time.new %>
+			<% @request.user_id = current_user.id %>
+			<p>By clicking the button below, you are sending an email to the owner of this item requesting permission to borrow it.</p>
+		<%= f.submit "Submit Request" %>
+	<br/>
+    <% end %>
+  </div>
+</div>
