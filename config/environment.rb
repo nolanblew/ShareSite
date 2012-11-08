@@ -4,16 +4,18 @@ require File.expand_path('../application', __FILE__)
 # Initialize the rails application
 ShareSite::Application.initialize!
 
-# Set up mailer - In production you should override this in config/local.rb
-ActionMailer::Base.delivery_method = :file
-ActionMailer::Base.file_settings = { location: "mail_test" }
+			
+ActionMailer::Base.delivery_method = :smtp
+
 ActionMailer::Base.raise_delivery_errors = true
+ActionMailer::Base.perform_deliveries = true
 
-
-# Require config/local.rb
-
-if FileTest.exists? "#{::Rails.root.to_s}/config/local.rb"
-  require "#{::Rails.root.to_s}/config/local.rb"
-else
-  Rails.logger.warn 'Please set up config/local.rb'
-end
+ActionMailer::Base.smtp_settings = {
+	:address => "smtp.gmail.com",
+	:port => 587,
+	:authentication => :plain,
+	:user_name => "sharesite.do.not.reply@gmail.com",
+	:password => "nukiwheels",
+	:enable_starttls_auto => true,
+	:openssl_verify_mode => "none"
+}
