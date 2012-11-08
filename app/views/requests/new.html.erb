@@ -17,6 +17,7 @@
 					<td><%= item.description %></td>
 					<td><%= item.condition %></td>
 				</tr>
+				<input type="hidden" name="item_id" value="<%= item.id %>" />
 			</table>
 			<% @request.date_requested = Time.new %>
 			<% @request.user_id = current_user.id %>

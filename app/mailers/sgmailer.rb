@@ -1,10 +1,11 @@
 class SGmailer < ActionMailer::Base
   default :from => "sharesite.do.not.reply@gmail.com"
-  def email(recipient, subject, message)
-	@message = message
+  def email(recipient, subject, item, user)
+	@item = item.name
+	@user = user
 	mail(:to =>	recipient, :subject => subject) do |format|
-				format.text { render "email_plain.html.erb" }
-		format.html { render "email_html.html.erb" }
+			format.text { render "email_plain.html.erb" }
+			format.html { render "email_html.html.erb" }
 		end
   end
   
